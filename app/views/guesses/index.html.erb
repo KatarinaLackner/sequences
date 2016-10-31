@@ -18,33 +18,20 @@
 
 <ul>
   <li>
-    3, 4, 4
+<%= params["first_number"] %>, <%= params["second_number"] %>, <%= params["third_number"] %>
 
-      No.
-  </li>
-  <li>
-    3, 4, 5
+<% if params["first_number"] < params["second_number"] && params["second_number"] < params["third_number"] %>
+Yes!
 
-      Yes!
-  </li>
-  <li>
-    4, 4, 2
+<% else %>
+No.
 
-      No.
-  </li>
-  <li>
-    3, 3, 3
+<%end%>
 
-      No.
-  </li>
-  <li>
-    2, 3, 5
-
-      Yes!
   </li>
 </ul>
 
-<form action="">
+<form action="/all_guesses">
   <p>
     Enter a sequence:
   </p>
@@ -65,7 +52,7 @@
 
 <hr>
 
-<form action="">
+<form action="http://localhost:3000/show_answer">
   <p>
     When you think you know the rule, describe it in words below and then submit your answer. <strong>Make sure you’re right; you won’t get a second chance.</strong>
   </p>
@@ -82,4 +69,4 @@
 
 <hr>
 
-<a href="/clear_guesses">Reset</a>
+<a href="https://www.google.com">Reset</a>
